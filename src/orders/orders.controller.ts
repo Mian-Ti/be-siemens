@@ -27,8 +27,7 @@ export class OrdersController {
   @ApiOperation({ summary: 'Get all orders' })
   @ApiResponse({ status: 200, description: 'Return all orders.' })
   async getAllOrders(): Promise<Orders[]> {
-    const v = await this.orderRepository.find();
-    return v;
+    return await this.orderRepository.find();
   }
 
   @Get(':id')
